@@ -10,6 +10,11 @@ import UIKit
 
 
 class ViewController: UIViewController {
+    
+    //MARK: Properties
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var mealLabel: UILabel!
+    
 
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,5 +28,9 @@ class ViewController: UIViewController {
     }
 
 
-
+    //MARK: Actions
+    @IBAction func setDeaultMealText(_ sender: UIButton) {
+        mealLabel.text = "Default Text"
+    }
+    
 }

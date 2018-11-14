@@ -9,16 +9,16 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
-    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealLabel: UILabel!
+    @IBOutlet weak var nameTextField1: UITextField!
     
 
     override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+        super.viewDidLoad()
+        nameTextField1.delegate = self
     }
 
 
@@ -27,6 +27,15 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
     }
 
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        mealLabel.text = textField.text
+    }
 
     //MARK: Actions
     @IBAction func setDeaultMealText(_ sender: UIButton) {

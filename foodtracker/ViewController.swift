@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
     @IBOutlet weak var mealLabel: UILabel!
     @IBOutlet weak var nameTextField1: UITextField!
+    @IBOutlet weak var photoImageVIew: UIImageView!
     
 
     override func viewDidLoad() {
@@ -41,5 +42,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func setDeaultMealText(_ sender: UIButton) {
         mealLabel.text = "Default Text"
     }
-    
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+    }
 }
